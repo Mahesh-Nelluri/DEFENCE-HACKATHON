@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OceanGuard AI</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+    <div class="header-top">
+        <h1>⚓ OceanGuard AI</h1>
+
+        <div>
+            <input type="text" id="searchBar" placeholder="Search waste...">
+            <i class="fas fa-cog settings" onclick="openSettings()"></i>
+        </div>
+    </div>
+
+    <p>Naval Underwater Waste Detection System</p>
+</header>
+
+
+<div class="dashboard">
+
+    <!-- Radar -->
+    <div class="radar">
+        <div class="scan"></div>
+    </div>
+
+
+    <div class="table-box">
+
+        <!-- ADD RECORD -->
+        <div class="controls">
+
+            <!-- IMAGE UPLOAD -->
+            <input type="file" id="imageInput" accept="image/*">
+
+            <img id="preview" class="preview">
+
+            <input type="text" id="wasteInput" placeholder="Waste Type">
+            <input type="text" id="materialInput" placeholder="Material">
+            <input type="text" id="locationInput" placeholder="Location">
+            <input type="text" id="detectedInput" placeholder="Detected %">
+
+            <button class="add-btn" onclick="addRecord()">+ ADD Detection</button>
+
+        </div>
+
+        <!-- TABLE -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Waste</th>
+                    <th>Material</th>
+                    <th>Location</th>
+                    <th>Detected</th>
+                    <th>Time</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="dataTable"></tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+<!-- SETTINGS MODAL -->
+<div id="settingsModal" class="modal">
+    <div class="modal-content">
+
+        <h2>⚙️ Dashboard Settings</h2>
+
+        <label><input type="checkbox" id="toggleWaste" checked> Waste</label><br>
+        <label><input type="checkbox" id="toggleMaterial" checked> Material</label><br>
+        <label><input type="checkbox" id="toggleLocation" checked> Location</label><br>
+        <label><input type="checkbox" id="toggleDetected" checked> Detected</label><br>
+        <label><input type="checkbox" id="toggleTime" checked> Time</label><br><br>
+
+        <button onclick="applySettings()">Apply</button>
+        <button onclick="closeSettings()">Close</button>
+
+    </div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
